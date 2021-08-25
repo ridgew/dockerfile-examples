@@ -28,6 +28,9 @@ COPY --chown=java-app:java-app target/${JAR_FILE} /home/java-app/lib/app.jar
 
 USER java-app
 
+
+#ENTRYPOINT ["/bin/sh"]
+#ENTRYPOINT ["java","-jar","/home/java-app/lib/app.jar"]
 ENTRYPOINT ["/home/java-app/docker-entrypoint.sh"]
 
 EXPOSE 8080
